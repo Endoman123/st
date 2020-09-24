@@ -1,0 +1,6 @@
+# C stuff
+*.o
+st
+
+# Don't commit config.h
+config.h
