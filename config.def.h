@@ -8,7 +8,7 @@
 static char *font = "Caskaydia Cove NF:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-/*	"Wuncon Siji:pixelsize=14:autohint=true", */
+/*	"Wuncon Siji:pixelsize=11", */
 };
 
 static int borderpx = 2;
