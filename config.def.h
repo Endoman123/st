@@ -5,10 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Caskaydia Cove NF:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Caskaydia Cove NF:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-/*	"Caskaydia Cove NF:pixelsize=14:antialias=true:autohint=true", */
 /*	"Wuncon Siji:pixelsize=14:autohint=true", */
 };
 
