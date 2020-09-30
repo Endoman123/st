@@ -7,7 +7,7 @@
  */
 static char *font = "Cozette:size=11:antialias=false:autohint=true";
 static char *font2[] = {
-	"Wuncon Siji:size=11"
+	"siji:size=11:antialias=false"
 };
 
 static int borderpx = 2;
