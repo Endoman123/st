@@ -159,7 +159,6 @@ static void xhints(void);
 static int xloadcolor(int, const char *, Color *);
 static int xloadfont(Font *, FcPattern *);
 static void xloadfonts(char *, double);
-static int xloadsparefont(FcPattern *, int);
 static void xloadsparefonts(void);
 static void xunloadfont(Font *);
 static void xunloadfonts(void);
@@ -1214,6 +1213,7 @@ xicdestroy(XIC xim, XPointer client, XPointer call)
 void
 xinit(int cols, int rows)
 {
+	printf("Loaded fonts");
 	XGCValues gcvalues;
 	Cursor cursor;
 	Window parent;
