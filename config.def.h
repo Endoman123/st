@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Cozette:size=11:antialias=false:autohint=true";
+static char *font = "Cozette:style=Medium:size=12:antialias=false:autohint=true";
 static char *font2[] = {
-	"siji:size=11:antialias=false"
+    "siji:style=Regular:size=12:antialias=false"
 };
 
 static int borderpx = 2;
@@ -30,7 +30,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
+static float cwscale = 0.8;
 static float chscale = 1.0;
 
 /*
@@ -103,31 +103,30 @@ float alpha = 0.95, alphaUnfocused = 0.75;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#252525",
+	"#FF443E",
+	"#C3D82C",
+	"#FFC135",
+	"#FFC135",
+	"#D81B60",
+	"#00ACC1",
+	"#F5F5F5",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#252525",
+	"#FF443E",
+	"#C3D82C",
+	"#FFC135",
+	"#FFC135",
+	"#D81B60",
+	"#00ACC1",
+	"#F5F5F5",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"black",
+	"#A1B0B8",
+	"#151515",
 };
 
 
@@ -135,8 +134,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 unsigned int bg = 0, bgUnfocused = 0;
@@ -208,6 +207,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
